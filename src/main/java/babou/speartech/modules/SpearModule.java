@@ -19,7 +19,7 @@ public abstract class SpearModule extends Module {
     public void onActivate() {
         if (WorldGuard.canModifyGameplay()) return;
 
-        error("Gameplay modifiers are only available in worlds you control.");
+        error("Gameplay modifiers are unavailable until you join a world.");
         toggle();
     }
 
