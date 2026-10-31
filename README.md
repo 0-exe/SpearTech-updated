@@ -25,7 +25,7 @@ src/main/java/babou/speartech/
 ├── modules/                   # One Meteor module per file
 ├── mixin/                     # Minecraft hooks used by Reach, Damage and Lunge
 ├── hud/                       # Visual-only Meteor HUD element
-└── util/WorldGuard.java       # Environment checks for gameplay modifiers
+└── util/WorldGuard.java       # Client/world checks for gameplay modifiers
 ```
 
 The two Mixins are deliberately small:
@@ -53,6 +53,10 @@ The compiled JAR is written to `build/libs/`.
 - Fabric Loader 0.19.5+
 - Meteor Client 26.3
 - Java 25
+
+Gameplay modifiers work in singleplayer and multiplayer. They affect the local
+player only; server-side rules and anti-cheat systems can still override or
+reject their effects.
 
 ## License
 

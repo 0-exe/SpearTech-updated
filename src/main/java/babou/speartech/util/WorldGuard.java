@@ -11,21 +11,13 @@ public final class WorldGuard {
     }
 
     /**
-     * Returns true when the current client owns the integrated server and no
-     * additional players are connected.
+     * Returns true when the client is connected to a world and can apply
+     * client-side gameplay modifications to its local player.
      */
     public static boolean canModifyGameplay() {
         Minecraft mc = Minecraft.getInstance();
 
-        if (mc.player == null || mc.level == null || mc.getConnection() == null) {
-            return false;
-        }
-
-        if (!mc.isLocalServer()) {
-            return false;
-        }
-
-        return mc.getConnection().getOnlinePlayers().size() <= 1;
+        return mc.player != null && mc.level != null && mc.getConnection() != null;
     }
 
     /**
